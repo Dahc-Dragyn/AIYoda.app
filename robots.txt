@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aiyoda.app/sitemap.xml

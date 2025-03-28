@@ -1,0 +1,302 @@
+/* Importing FontAwesome */
+@import url('fontawesome-all.min.css');
+
+/* Root Variables for Consistency */
+:root {
+    --main-bg-color: #000;
+    --text-color: #ffffff;
+    --header-bg-color: rgba(0, 0, 0, 0.6);
+    --accent-color: #ffcc00;
+    --font-size-base: 16px;
+    --button-bg-color: #4CAF50; /* Default button color */
+    --button-hover-color: #367c39; /* Default button hover color */
+}
+
+/* Global Styles */
+body {
+    background-image: url("https://storage.googleapis.com/chads/space.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    font-size: var(--font-size-base);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Legal Banner Styles */
+.legal-banner {
+    background-color: var(--accent-color);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.legal-link {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+.separator {
+    color: var(--text-color);
+    margin: 0 5px;
+}
+
+/* Header Styles */
+#header {
+    background-color: var(--header-bg-color);
+    padding: 2em;
+    color: var(--text-color);
+    padding-top: 60px; /* Space for the fixed legal banner */
+    display: flex;
+    justify-content: center; /* Center the header content */
+    align-items: center; /* Vertically center */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row; /* Keep row layout for desktop */
+    align-items: center;
+    max-width: 1200px; /* Limit width for better layout control */
+    width: 100%;
+}
+
+#header .content {
+    text-align: left; /* Left align content text */
+    margin-right: 2em; /* Space between content and image */
+    flex: 1; /* Allow content to grow */
+}
+
+#header h1 a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 2em;
+    display: block;
+}
+
+#header p {
+    margin: 0.5em 0 0;
+    font-size: 1.2em;
+}
+
+/* Winnie Image Styling */
+.image.winnie {
+    flex: 0 0 auto; /* Prevent image from growing */
+    width: 300px; /* Fixed width for the image */
+    position: relative; /* Critical for absolute positioning of the button */
+}
+
+.image.winnie img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--accent-color);
+}
+
+/* Kofi Button Container Styles */
+.donation-button-container {
+    position: absolute; /* Position relative to .image.winnie */
+    bottom: -60px; /* Keep the same spacing as the red bar */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    z-index: 2000; /* Ensure it's on top */
+}
+
+/* Section Styling */
+section.wrapper.style2 {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--text-color);
+    padding: 2em;
+    border-radius: 8px;
+    margin: 2em auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+section.wrapper.style2 h2 {
+    margin: 0;
+    font-size: 2em;
+    color: var(--accent-color);
+}
+
+/* Footer Styles */
+#footer {
+    text-align: center;
+    padding: 1em 0;
+    font-size: 0.9em;
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
+    position: relative; /* Important for positioning */
+}
+
+/* --- Unified Button Styles --- */
+.app-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 250px;
+    background-color: var(--button-bg-color); /* Default background color */
+}
+
+.app-button:hover {
+    background-color: var(--button-hover-color); /* Default hover color */
+}
+
+/* Specific button colors (overrides the default) */
+.santa-button { background-color: #c40000; }
+.dnd-button { background-color: #228B22; }
+.llama-button { background-color: #A78B6E; }
+.explainer { background-color: #ffb347; color: #3f51b5; border: 2px solid #ff9800; font-family: 'Comic Sans MS', cursive, sans-serif; }
+.warnews { background-color: #8b0000; color: #ebe9df; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); }
+.perfect-ai-boyfriend { background-color: #26a2a8; }
+.book-scene-generator { background-color: #0ff20f; }
+.baby-turtle-race { background-color: #4682B4; }
+
+/* Specific Hover Colors */
+.santa-button:hover { background-color: #598133; }
+.dnd-button:hover { background-color: #195919; }
+.llama-button:hover { background-color: #8A6B4C; }
+.explainer:hover { background-color: #00ff2a; }
+.warnews:hover { background-color: #a0522d; }
+.perfect-ai-boyfriend:hover { background-color: #cd26c2; }
+.book-scene-generator:hover { background-color: #195919; }
+.baby-turtle-race:hover { background-color: #00008B; }
+
+/* Grid Styles */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-grid > div {
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.app-grid h3 {
+    color: var(--accent-color);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    #header {
+        padding: 1em;
+    }
+
+    #header h1 a {
+        font-size: 1.5em;
+    }
+
+    .header-content {
+        flex-direction: column; /* Stack vertically on mobile */
+    }
+
+    #header .content {
+        text-align: center; /* Center text on mobile */
+        margin-right: 0; /* No margin on mobile */
+        margin-bottom: 1em; /* Space below content */
+    }
+
+    .image.winnie {
+        width: 100%; /* Full width on mobile */
+        max-width: 200px; /* Limit maximum width on mobile */
+        margin: 0 auto; /* Center image */
+    }
+
+    .donation-button-container {
+        bottom: -60px; /* Consistent spacing on mobile */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    section.wrapper.style2 {
+        padding: 1em;
+        max-width: 95%;
+    }
+
+    .app-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 10px;
+    }
+
+    .legal-banner {
+        flex-direction: column;
+    }
+
+    .legal-link {
+        margin: 5px 0;
+    }
+
+    .separator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.turtle-race-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent dark background */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto; /* Center the container */
+    max-width: 400px; /* Adjust as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.turtle-race-container h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+/* Ko-Fi Button Container */
+#kofi-button-wrapper {
+    display: inline-block; /* Important: Prevents the wrapper from taking up full width */
+    text-align: center;    /* Centers the button horizontally */
+    /* Add any other styling you want for the container here */
+}
+
+/* Override Ko-Fi Button Styles (if needed) */
+#kofi-button-wrapper .kofi-button {
+    /* Example overrides - adjust as needed based on Ko-Fi's actual CSS */
+    margin: 0;          /* Remove any default margins */
+    padding: 0;         /* Remove any default padding */
+    display: inline-block; /* Ensure it behaves like a regular button */
+    width: auto;        /* Let the button determine its own width */
+    /* Add other overrides as you see fit after inspecting the button's styles */
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Explore Chad Nygard's amazing Flask-powered website hosted on Cloud Run.">
+    <meta name="author" content="aiyodachad">
+    <title>AIYoda.app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='noscript.css') }}"></noscript>
+</head>
+<body class="is-preload">
+
+    <div class="legal-banner">
+        <a href="/privacy" class="legal-link">Privacy Policy</a> |
+        <a href="/safety" class="legal-link">Child Safety Standards</a> |
+        <a href="/terms" class="legal-link">Terms of Use</a>
+    </div>
+
+    <header id="header">
+        <div class="content">
+            <h1><a href="#">AIYoda.app</a></h1>
+            <p>Welcome to AIYoda.app<br>All apps are serverless please allow boot time.</p>
+        </div>
+        <div class="image winnie">
+            <div class="inner">
+                <img src="https://storage.googleapis.com/chads/winnie.jpg" alt="Winnie the Pooh" />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="one" class="wrapper style2 special">
+            <header class="major">
+                <h2>Explore the Apps below!</h2>
+            </header>
+
+            <div class="app-grid">
+                <div>
+                    <h3>Santa Bot</h3>
+                    <a href="https://idx-chatbot-test-9369019-z3iigmilpq-ue.a.run.app/" class="santa-button" target="_blank">Santa Bot</a>
+                </div>
+                <div>
+                    <h3>D&D Dice Roller</h3>
+                    <a href="https://idx-chads-d-and-d-roller-2033860-z3iigmilpq-ue.a.run.app" class="dnd-button" target="_blank">D&D Dice Roller</a>
+                </div>
+                <div>
+                    <h3>Llama 2 Chatbot</h3>
+                    <a href="https://idx-test-4999874-z3iigmilpq-ue.a.run.app" class="llama-button" target="_blank">Llama LLM Bot</a>
+                </div>
+                <div>
+                    <h3>Tell Me like I am a 5-YO</h3>
+                    <a href="https://tell-me-like-a-5yo-140939405627.us-east1.run.app" class="explainer" target="_blank">Explainer Bot by age</a>
+                </div>
+                <div>
+                    <h3>WarNews RSS</h3>
+                    <a href="https://idx-russian-news-rss-4685253-140939405627.us-east1.run.app" class="warnews" target="_blank">War News puller</a>
+                </div>
+                <div>
+                    <h3>Chads Portfolio</h3>
+                    <a href="https://idx-personal-portfolio-1746937-z3iigmilpq-ue.a.run.app" class="personal-portfolio" target="_blank">CHAD</a>
+                </div>
+                <div>
+                    <h3>Scene Image Generator</h3>
+                    <a href="https://idx-scene-generator-8147345-z3iigmilpq-ue.a.run.app" class="book-scene-generator" target="_blank">Book Scene Generator</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p class="copyright">&copy; <span id="currentYear"></span> aiyodachad@gmail.com.</p>
+        <a href="mailto:aiyodachad@gmail.com">aiyodachad@gmail.com</a>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='jquery.scrolly.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='util.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>
