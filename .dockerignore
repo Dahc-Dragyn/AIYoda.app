@@ -1,3 +1,28 @@
-.venv
-__pycache__
+# Python
+__pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+*.env
+
+# Git
+.git/
+.gitignore
+
+# IDE / OS specific
+.vscode/
+.idea/
+*.DS_Store
+tools
+
+# Local instance/test files
+instance/
+*.sqlite3
+# Add any other local config or temp files you don't want in the image

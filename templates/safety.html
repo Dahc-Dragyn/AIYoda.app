@@ -1,52 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIyoda - Child Safety Standards</title>
-    <div style="height: 1px;"></div> <header id="header"></header>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
-</head>
-<body>
+{% extends "base.html" %}
 
-    <div class="legal-banner">
-        <a href="/" class="legal-link">Home</a> |
-        <a href="/privacy" class="legal-link">Privacy Policy</a> |
-        <a href="/terms" class="legal-link">Terms of Use</a>
-    </div>
+{# Define the unique title for the child safety page #}
+{% block title %}AIyoda - Child Safety Standards{% endblock %}
 
-    <div class="container">
-        <h1>AIyoda - Child Safety Standards</h1>
+{# Define the legal banner links for the child safety page #}
+{# Make sure your Flask routes are named 'index', 'privacy', 'terms' or change hrefs to '/', '/privacy', etc. #}
+{% block legal_banner_content %}
+    <a href="{{ url_for('index') }}" class="legal-link">Home</a>
+    <span class="separator">|</span>
+    <a href="{{ url_for('privacy') }}" class="legal-link">Privacy Policy</a>
+    <span class="separator">|</span>
+    <a href="{{ url_for('terms') }}" class="legal-link">Terms of Use</a>
+{% endblock %}
 
-        <p>AIyoda is committed to providing a safe and secure online environment for children. We take the safety of children very seriously and have implemented the following measures to protect them:</p>
+{# Define the main content for the child safety page #}
+{% block content %}
+<div class="container">
+    <h1>AIyoda - Child Safety Standards</h1>
 
-        <h2>1. Prevention of Child Sexual Abuse and Exploitation</h2>
-        <ul>
-            <li>We do not allow content that depicts, promotes, or facilitates child sexual abuse or exploitation.</li>
-            <li>We have reporting mechanisms in place for users to report any content or behavior that they believe violates our child safety standards.</li>
-            <li>We work with law enforcement to investigate and prosecute any individuals who attempt to exploit children through our services.</li>
-        </ul>
+    <p>AIyoda is committed to providing a safe and secure online environment for children. We take the safety of children very seriously and have implemented the following measures to protect them:</p>
 
-        <h2>2. Addressing Child Sexual Abuse Material (CSAM)</h2>
-        <ul>
-            <li>We have a zero-tolerance policy for CSAM. Any content that depicts child sexual abuse will be immediately removed and reported to the National Center for Missing and Exploited Children (NCMEC).</li>
-            <li>We use technology and human review to proactively identify and remove CSAM from our services.</li>
-        </ul>
+    <h2>1. Prevention of Child Sexual Abuse and Exploitation</h2>
+    <ul>
+        <li>We do not allow content that depicts, promotes, or facilitates child sexual abuse or exploitation.</li>
+        <li>We have reporting mechanisms in place for users to report any content or behavior that they believe violates our child safety standards.</li>
+        <li>We work with law enforcement to investigate and prosecute any individuals who attempt to exploit children through our services.</li>
+    </ul>
 
-        <h2>3. Compliance with Child Safety Laws</h2>
-        <ul>
-            <li>We comply with all applicable child safety laws, including the Children's Online Privacy Protection Act (COPPA) and the Protecting Children from Internet Pornographers Act of 2011.</li>
-            <li>We regularly review and update our policies and procedures to ensure that we are meeting the latest child safety standards.</li>
-        </ul>
+    <h2>2. Addressing Child Sexual Abuse Material (CSAM)</h2>
+    <ul>
+        <li>We have a zero-tolerance policy for CSAM. Any content that depicts child sexual abuse will be immediately removed and reported to the National Center for Missing and Exploited Children (NCMEC).</li>
+        <li>We use technology and human review to proactively identify and remove CSAM from our services.</li>
+    </ul>
 
-        <h2>4. Reporting Concerns</h2>
-        <p>If you have any concerns about the safety of a child on our services, please report it to us immediately. You can report concerns by contacting us at your-email@example.com.</p>
+    <h2>3. Compliance with Child Safety Laws</h2>
+    <ul>
+        <li>We comply with all applicable child safety laws, including the Children's Online Privacy Protection Act (COPPA) and the Protecting Children from Internet Pornographers Act of 2011.</li>
+        <li>We regularly review and update our policies and procedures to ensure that we are meeting the latest child safety standards.</li>
+    </ul>
 
-        <h2>5. Point of Contact for Child Safety Issues</h2>
-        <p>For any questions or concerns regarding child safety, please contact our designated child safety agent at aiyodachad@gmail.com.</p>
+    <h2>4. Reporting Concerns</h2>
+    <p>If you have any concerns about the safety of a child on our services, please report it to us immediately. You can report concerns by contacting us at aiyodachad@gmail.com.</p> {# Updated placeholder email #}
 
-        <p>We are committed to continuously improving our child safety measures and working with parents, educators, and law enforcement to create a safer online environment for children.</p>
-    </div>
+    <h2>5. Point of Contact for Child Safety Issues</h2>
+    <p>For any questions or concerns regarding child safety, please contact our designated child safety agent at aiyodachad@gmail.com.</p>
 
-</body>
-</html>
+    <p>We are committed to continuously improving our child safety measures and working with parents, educators, and law enforcement to create a safer online environment for children.</p>
+</div>
+{% endblock %}

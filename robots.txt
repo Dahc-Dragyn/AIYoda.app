@@ -1,3 +1,18 @@
+# robots.txt for https://aiyoda.app
 User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /*.php$
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /*config*
+Disallow: /*lock*
+Disallow: /*autoload*
+Disallow: /*class*
+Disallow: /*sodium*
+Disallow: /*ID3*
 Allow: /
 Sitemap: https://aiyoda.app/sitemap.xml

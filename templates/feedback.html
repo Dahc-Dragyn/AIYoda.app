@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{# Define the title for the feedback page #}
+{% block title %}AIYoda - Feedback & Community{% endblock %}
+
+{# Define the legal banner links for this page #}
+{% block legal_banner_content %}
+    <a href="{{ url_for('index') }}" class="legal-link">Home</a>
+    <span class="separator">|</span>
+    <a href="{{ url_for('privacy') }}" class="legal-link">Privacy Policy</a>
+    <span class="separator">|</span>
+    <a href="{{ url_for('safety') }}" class="legal-link">Child Safety Standards</a>
+    <span class="separator">|</span>
+    <a href="{{ url_for('terms') }}" class="legal-link">Terms of Use</a>
+{% endblock %}
+
+{# --- Main Content Area --- #}
+{% block content %}
+    <section id="feedback-section" class="wrapper style2 special">
+        <div class="content-container">
+            <header class="major">
+                <h2>Community Feedback</h2>
+                <p>Share your thoughts, ideas, or feedback below!</p>
+            </header>
+
+            {# --- CUSDIS EMBED START --- #}
+            <div id="cusdis_thread"
+              data-host="https://cusdis.com"
+              data-app-id="a4b8f052-e025-4fa6-b539-5117a683c861"
+              data-page-id="{{ request.path }}"
+              data-page-url="{{ request.url }}"
+              data-page-title="{{ page_title }}" {# Use the passed variable #}
+              data-theme="light"
+            ></div>
+            {# --- CUSDIS EMBED END --- #}
+        </div>
+    </section>
+{% endblock %}
+
+{# The body_extra block with the script remains the same #}
+{% block body_extra %}
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+{% endblock %}

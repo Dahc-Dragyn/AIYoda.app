@@ -7,3 +7,5 @@ flask-cors==4.0.0  # For handling Cross-Origin Resource Sharing
 python-dotenv==1.0.0  # For managing environment variables
 flask-wtf==1.1.1  # For form handling and validation
 Jinja2==3.1.2  # For HTML templating (ensures compatibility)
+Flask-Limiter
+Limiter

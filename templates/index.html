@@ -1,100 +1,67 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="Explore Chad Nygard's amazing Flask-powered website hosted on Cloud Run.">
-    <meta name="author" content="aiyodachad">
-    <title>AIYoda.app</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
-    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='noscript.css') }}"></noscript>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXCP2HPY48"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+{% extends "base.html" %}
 
-      gtag('config', 'G-SXCP2HPY48');
-    </script>
-    </head>
-<body>
+{# Define the unique title for the home page #}
+{% block title %}AIYoda.app - Home{% endblock %}
 
-<div class="legal-banner">
-    <a href="/privacy" class="legal-link">Privacy Policy</a>
+{# Define the legal banner links for the home page (matches the default in base.html) #}
+{# Make sure your Flask routes are named 'privacy', 'safety', 'terms' or change hrefs to '/privacy', etc. #}
+{% block legal_banner_content %}
+    <a href="{{ url_for('privacy') }}" class="legal-link">Privacy Policy</a>
     <span class="separator">|</span>
-    <a href="/safety" class="legal-link">Child Safety Standards</a>
+    <a href="{{ url_for('safety') }}" class="legal-link">Child Safety Standards</a>
     <span class="separator">|</span>
-    <a href="/terms" class="legal-link">Terms of Use</a>
-</div>
+    <a href="{{ url_for('terms') }}" class="legal-link">Terms of Use</a>
+    <span class="separator">|</span>
+    <a href="{{ url_for('feedback') }}" class="legal-link">Feedback</a>
+{% endblock %}
 
-<header id="header">
-    <div class="header-content">
-        <div class="content">
-            <h1><a href="#">AIYoda.app</a></h1>
-            <p>Welcome to AIYoda.app<br>All apps are serverless please allow boot time.</p>
+{# Define the main content for the home page (the app grid) #}
+{% block content %}
+<section id="one" class="wrapper style2 special">
+    <header class="major">
+        <h2>Explore the Apps below!</h2>
+    </header>
+    <div class="app-grid">
+        <div>
+            <h3>PromptForge</h3>
+            <a href="https://promptforge.aiyoda.app/dashboard" class="app-button promptforge" target="_blank">PromptForge</a>
         </div>
-        <div class="image winnie">
-            <img src="https://storage.googleapis.com/chads/winnie.jpg" alt="Winnie Yoda" id="yoda-image"/>
-            <div class="donation-button-container" style="text-align: center;">
-                <div id="kofi-button-wrapper">
-                    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-                    <script type='text/javascript'>kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'N4N61C9XKI');kofiwidget2.draw();</script>
-                </div>
-            </div>
+        <div>
+            <h3>Life Coach 1min Boot Up</h3>
+            <a href="https://life-coach-service-140939405627.us-west1.run.app" class="app-button santa-button" target="_blank">Life Coach in Beta</a>
+        </div>
+        <div>
+            <h3>D&D Agent 1min Bootup</h3>
+            <a href="https://dndstreamlit-140939405627.us-west1.run.app" class="app-button dnd-button" target="_blank">D&D Knowledge Agent</a>
+        </div>
+        <div>
+            <h3>Rock Lizard Spock & Chat</h3>
+            <a href="https://idx-rock-lizard-spock-97564177-140939405627.us-west1.run.app" class="app-button llama-button" target="_blank">Rock Lizard Spock&Chat</a>
+        </div>
+        <div>
+            <h3>Tell Me like I am a 5-YO</h3>
+            <a href="https://tell-me-like-a-5yo-140939405627.us-east1.run.app" class="app-button explainer" target="_blank">Explainer Bot by age</a>
+        </div>
+        <div>
+            <h3>WarNews RSS</h3>
+            <a href="https://idx-russian-news-rss-4685253-140939405627.us-east1.run.app" class="app-button warnews" target="_blank">War News puller</a>
+        </div>
+        <div>
+            <h3>Perfect AI Boyfriend</h3>
+            <a href="https://idx-perfect-boyfriend-7638571-z3iigmilpq-uw.a.run.app/" class="app-button perfect-ai-boyfriend" target="_blank">Perfect AI Boyfriend</a>
+        </div>
+        <div>
+            <h3>Scene Image Generator</h3>
+            <a href="https://book-scene-service-140939405627.us-west1.run.app" class="app-button book-scene-generator" target="_blank">Book Scene Generator v2</a>
+        </div>
+        <div>
+            <h3>Turtle Race in .JS</h3>
+            <a href="https://turtle-service-140939405627.us-central1.run.app" class="app-button baby-turtle-race" target="_blank">Baby Turtle Race</a>
+        </div>
+        <div>
+            <h3>Jane Austen AI Agent</h3>
+            <a href="https://dndstreamlit-140939405627.us-east1.run.app/" class="app-button dnd-button" target="_blank">The Digital Quill</a>
         </div>
     </div>
-</header>
-
-<main>
-    <section id="one" class="wrapper style2 special">
-        <header class="major">
-            <h2>Explore the Apps below!</h2>
-        </header>
-        <div class="app-grid">
-            <div>
-                <h3>Life Coach Agent</h3>
-                <a href="https://life-coach-service-140939405627.us-west1.run.app" class="app-button santa-button" target="_blank">Life Coach</a>
-            </div>
-            <div>
-                <h3>D&D Dice Roller</h3>
-                <a href="https://idx-chads-d-and-d-roller-2033860-z3iigmilpq-ue.a.run.app" class="app-button dnd-button" target="_blank">D&D Dice Roller</a>
-            </div>
-            <div>
-                <h3>Llama 2 Chatbot</h3>
-                <a href="https://idx-test-4999874-z3iigmilpq-ue.a.run.app" class="app-button llama-button" target="_blank">Llama LLM Bot</a>
-            </div>
-            <div>
-                <h3>Tell Me like I am a 5-YO</h3>
-                <a href="https://tell-me-like-a-5yo-140939405627.us-east1.run.app" class="app-button explainer" target="_blank">Explainer Bot by age</a>
-            </div>
-            <div>
-                <h3>WarNews RSS</h3>
-                <a href="https://idx-russian-news-rss-4685253-140939405627.us-east1.run.app" class="app-button warnews" target="_blank">War News puller</a>
-            </div>
-            <div>
-                <h3>Perfect AI Boyfriend</h3>
-                <a href="https://idx-perfect-boyfriend-7638571-z3iigmilpq-uw.a.run.app/" class="app-button perfect-ai-boyfriend" target="_blank">Perfect AI Boyfriend</a>
-            </div>
-            <div>
-                <h3>Scene Image Generator</h3>
-                <a href="https://book-scene-service-140939405627.us-west1.run.app" class="app-button book-scene-generator" target="_blank">Book Scene Generator v2</a>
-            </div>
-            <div>
-                <h3>Turtle Race in .JS</h3>
-                <a href="https://turtle-service-140939405627.us-central1.run.app" class="app-button baby-turtle-race" target="_blank">Baby Turtle Race</a>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer id="footer">
-    <p class="copyright">© <span id="currentYear"></span> aiyodachad@gmail.com.</p>
-    <a href="mailto:aiyodachad@gmail.com">aiyodachad@gmail.com</a>
-     <script>
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
-    </script>
-</footer>
-   
-</body>
-</html>
+</section>
+{% endblock %}

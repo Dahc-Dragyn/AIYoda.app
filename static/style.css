@@ -116,8 +116,8 @@ body {
 
 /* Section Styling */
 section.wrapper.style2 {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: var(--text-color);
+    background-color: transparent; /* Transparent to blend with the space background */
+    color: var(--text-color); /* White text for any content outside the container */
     padding: 2em;
     border-radius: 8px;
     margin: 2em auto;
@@ -125,10 +125,24 @@ section.wrapper.style2 {
     text-align: center;
 }
 
-section.wrapper.style2 h2 {
+/* Content Container Inside Section */
+section.wrapper.style2 .content-container {
+    background-color: #ffffff; /* White background for the content */
+    color: #000000; /* Black text for contrast */
+    padding: 1.5em;
+    border-radius: 8px;
+    max-width: 600px; /* Narrower width to avoid full-width bar */
+    margin: 0 auto; /* Center the container */
+}
+
+section.wrapper.style2 .content-container h2 {
     margin: 0;
     font-size: 2em;
-    color: var(--accent-color);
+    color: #333333; /* Darker color for readability on white */
+}
+
+section.wrapper.style2 .content-container p {
+    color: #000000; /* Ensure paragraph text is black */
 }
 
 /* Footer Styles */
@@ -164,16 +178,18 @@ section.wrapper.style2 h2 {
 }
 
 /* Specific button colors (overrides the default) */
+.promptforge { background-color: #2153a9; }
 .santa-button { background-color: #c40000; }
 .dnd-button { background-color: #228B22; }
 .llama-button { background-color: #A78B6E; }
-.explainer { background-color: #ffb347; color: #3f51b5; border: 2px solid #ff9800; font-family: 'Comic Sans MS', cursive, sans-serif; }
+.explainer { background-color: #ffb347; color: #3f51b5; border: none; }
 .warnews { background-color: #8b0000; color: #ebe9df; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); }
 .perfect-ai-boyfriend { background-color: #26a2a8; }
 .book-scene-generator { background-color: #0ff20f; }
 .baby-turtle-race { background-color: #4682B4; }
 
 /* Specific Hover Colors */
+.promptforge:hover { background-color: #062437; }
 .santa-button:hover { background-color: #598133; }
 .dnd-button:hover { background-color: #195919; }
 .llama-button:hover { background-color: #8A6B4C; }
@@ -193,12 +209,16 @@ section.wrapper.style2 h2 {
     margin: 0 auto;
 }
 
+/* >>> MODIFIED RULE <<< */
 .app-grid > div {
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */ /* Commented out to remove box effect */
+    background-color: transparent; /* Ensure cell background is transparent */
 }
+/* >>> END MODIFIED RULE <<< */
+
 
 .app-grid h3 {
     color: var(--accent-color);
@@ -240,11 +260,6 @@ section.wrapper.style2 h2 {
         transform: translateX(-50%);
     }
 
-    section.wrapper.style2 {
-        padding: 1em;
-        max-width: 95%;
-    }
-
     .app-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-gap: 10px;
@@ -260,6 +275,12 @@ section.wrapper.style2 h2 {
 
     .separator {
         display: none;
+    }
+
+    /* Adjust content container for smaller screens */
+    section.wrapper.style2 .content-container {
+        max-width: 90%; /* Slightly wider on mobile */
+        padding: 1em;
     }
 }
 
@@ -295,8 +316,25 @@ section.wrapper.style2 h2 {
 #kofi-button-wrapper .kofi-button {
     /* Example overrides - adjust as needed based on Ko-Fi's actual CSS */
     margin: 0;          /* Remove any default margins */
-    padding: 0;         /* Remove any default padding */
+    padding: 0;          /* Remove any default padding */
     display: inline-block; /* Ensure it behaves like a regular button */
-    width: auto;        /* Let the button determine its own width */
+    width: auto;          /* Let the button determine its own width */
     /* Add other overrides as you see fit after inspecting the button's styles */
+}
+
+/* Make the feedback section wider */
+#feedback-section {
+    max-width: 50%; /* Try 95% or even 100% if you want it full-width */
+}
+
+/* Optional: Ensure the cusdis container uses the space */
+#cusdis_thread {
+    width: 100%;
+    margin-top: 2em;
+    height: 800px;
+    background-color: transparent; /* Inherit the container's background */
+}
+
+#cusdis_thread iframe {
+    height: 800px !important;
 }

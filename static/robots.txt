@@ -1,0 +1,47 @@
+User-agent: *
+
+# Disallow paths that your main.py filter blocks
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+Disallow: /wp-login.php
+Disallow: /wp-signup.php
+Disallow: /xmlrpc.php
+Disallow: /wp-mail.php # Or /wp-mail.php/
+
+Disallow: /.git/
+Disallow: /.env
+Disallow: /wp-conflg.php # Check for typo if you meant wp-config.php
+Disallow: /phpinfo.php
+Disallow: /config.json
+Disallow: /lock.php
+Disallow: /classsmtps.php
+Disallow: /browse.php
+Disallow: /403.php # The error page itself, if you don't want it indexed
+
+Disallow: /makeasmtp.php # From previous logs
+Disallow: /13.php # From previous logs
+Disallow: /doc.php # From previous logs
+Disallow: /admin/ # Covers /admin/dashboard and other /admin/ paths
+
+# For .well-known, you might want to be more specific.
+# If you don't use .well-known at all:
+Disallow: /.well-known/
+# If you use it for specific things like ACME challenges for SSL, you might do:
+# Allow: /.well-known/acme-challenge/
+# Disallow: /.well-known/ # (This would then block other .well-known paths)
+
+# Disallow all PHP files for all user agents, matching your Python filter.
+Disallow: /*.php$
+
+# IMPORTANT: Default stance on crawling other parts of your site
+# If your main content (like index.html and what's in your sitemap) should be crawled:
+Allow: /
+# If you prefer to block everything by default and only allow specific good paths:
+# Disallow: /
+# Allow: /index.html  (example)
+# Allow: /some-other-public-page.html (example)
+# Allow: /static/ (if your static assets are here and needed by crawlers, though usually not necessary if linked from allowed HTML)
+
+# Ensure search engines can find your sitemap
+Sitemap: https://aiyoda.app/sitemap.xml

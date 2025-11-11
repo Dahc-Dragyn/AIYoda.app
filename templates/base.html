@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="{% block meta_description %}Explore Chad Nygard's amazing Flask-powered website hosted on Cloud Run.{% endblock %}">
+    <meta name="author" content="aiyodachad">
+
+    <title>{% block title %}AIYoda.app{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='noscript.css') }}"></noscript>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXCP2HPY48"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SXCP2HPY48');
+    </script>
+
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+
+    <div class="legal-banner">
+        {% block legal_banner_content %}
+            <a href="{{ url_for('privacy') }}" class="legal-link">Privacy Policy</a> {# Assuming route named 'privacy' #}
+            <span class="separator">|</span>
+            <a href="{{ url_for('safety') }}" class="legal-link">Child Safety Standards</a> {# Assuming route named 'safety' #}
+            <span class="separator">|</span>
+            <a href="{{ url_for('terms') }}" class="legal-link">Terms of Use</a> {# Assuming route named 'terms' #}
+            <a href="{{ url_for('feedback') }}" class="legal-link">Feedback</a>
+        {% endblock %}
+    </div>
+
+    <header id="header">
+        <div class="header-content">
+            <div class="content">
+                <h1><a href="{{ url_for('index') }}">AIYoda.app</a></h1> {# Assuming route named 'index' #}
+                <p>To AIYoda.app, welcome you are.<br>Serverless, our apps sleep. Time to wake, Patience, you must have.</p>
+            </div>
+            <div class="image winnie">
+                <img src="https://storage.googleapis.com/chads/winnie.jpg" alt="Winnie Yoda" id="yoda-image"/>
+                <div class="donation-button-container" style="text-align: center;">
+                    <div id="kofi-button-wrapper">
+                        <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+                        <script type='text/javascript'>kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'N4N61C9XKI');kofiwidget2.draw();</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer id="footer">
+        <p class="copyright">© <span id="currentYear"></span> aiyodachad@gmail.com.</p>
+        <a href="mailto:aiyodachad@gmail.com">aiyodachad@gmail.com</a>
+         <script>
+           document.getElementById("currentYear").textContent = new Date().getFullYear();
+         </script>
+    </footer>
+
+    {% block body_extra %}{% endblock %}
+
+</body>
+</html>
